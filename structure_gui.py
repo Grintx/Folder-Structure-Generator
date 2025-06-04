@@ -60,8 +60,6 @@ entry.pack(pady=5)
 tk.Label(window, text="Paste Folder/File Structure Below:", font=("Arial", 12, "bold")).pack(pady=10)
 text = scrolledtext.ScrolledText(window, width=80, height=20, font=("Courier New", 10))
 text.pack()
-
-# Create button
 tk.Button(window, text="Create", font=("Arial", 12, "bold"), bg="green", fg="white", command=on_create_clicked).pack(pady=20)
 
 window.mainloop()
