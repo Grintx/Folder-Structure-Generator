@@ -11,7 +11,7 @@ def parse_tree_structure(tree_string, base_folder):
         if not line.strip() or re.fullmatch(r'[│\s]+', line):
             continue
 
-        depth = line.count("    ")  # Count 4-space indents
+        depth = line.count("    ") 
         clean_line = re.sub(r"[├└─│]+", "", line).strip()
         clean_line = clean_line.split("#")[0].strip()
 
@@ -48,18 +48,15 @@ def on_create_clicked():
     except Exception as e:
         messagebox.showerror("Error", f"Failed to create structure:\n{str(e)}")
 
-# Create GUI window
 window = tk.Tk()
 window.title("📁 Folder Structure Generator")
 window.geometry("700x600")
 window.resizable(False, False)
 
-# Top-level folder name input
 tk.Label(window, text="Enter Top-Level Folder Name:", font=("Arial", 12, "bold")).pack(pady=10)
 entry = tk.Entry(window, width=50, font=("Arial", 12))
 entry.pack(pady=5)
 
-# Text area for folder structure
 tk.Label(window, text="Paste Folder/File Structure Below:", font=("Arial", 12, "bold")).pack(pady=10)
 text = scrolledtext.ScrolledText(window, width=80, height=20, font=("Courier New", 10))
 text.pack()
